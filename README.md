@@ -1,16 +1,14 @@
-# Ansible SSH Daemon Role
+# Ansible SSHd role
 
 ## Usage
 
-```
----
-# group_vars/all
-sshd_permit_root_login: without-password
-```
+    ---
+    # group_vars/all
+    sshd_permit_root_login: without-password
 
 Example playbook:
-```
-- hosts: all
-  remote_user: root
-  roles:
-  - resmo.sshd
+
+    - hosts: all
+      remote_user: root
+      roles:
+      - resmo.sshd
