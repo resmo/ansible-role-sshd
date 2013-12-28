@@ -12,7 +12,7 @@
 - name: configure sshd
   template: src=sshd_config.j2 dest={{ sshd_config_basedir }}/sshd_config
   notify: restart sshd
-  tags: configration
+  tags: configuration
 
 - name: enable sshd
   service: name={{ sshd_service_name }} state=running enabled=yes
