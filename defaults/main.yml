@@ -1,5 +1,5 @@
 ---
-# Port sshd is running on: 
+# Port sshd is running on:
 sshd_port: 22
 
 # Allowed settings are: yes, no, without-password
@@ -7,3 +7,6 @@ sshd_permit_root_login: yes
 
 # Allowed setting are: installed, latest
 sshd_pkg_state: installed
+
+# Allowed settings are: yes, no
+sshd_password_authentication: yes
