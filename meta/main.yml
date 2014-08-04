@@ -2,7 +2,7 @@
 galaxy_info:
   author: René Moser
   company: Moser Systems
-  license: MIT
+  license: BSD
   min_ansible_version: 1.4
 
   platforms:
