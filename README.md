@@ -1,12 +1,33 @@
-# Ansible SSHd role
-An ansible role for installing sshd.
+SSH
+===
 
 [![Build Status](https://travis-ci.org/resmo/ansible-role-sshd.png?branch=master)](https://travis-ci.org/resmo/ansible-role-sshd)
 
-## Usage
+This role installs and configures the sshd on their hosts.
 
+
+Requirements
+------------
+
+This role requires Ansible 1.4 or higher, and platform requirements are listed
+in the metadata file.
+
+
+Usage
+-----
+
+Example playbook using the defaults:
+
+    - hosts: all
+      remote_user: root
+      roles:
+      - resmo.sshd
+
+
+2) Install ntp and set some custom settings:
+
+    # file: group_vars/webservers
     ---
-    # group_vars/all
     sshd_permit_root_login: without-password
 
 Example playbook:
@@ -16,6 +37,14 @@ Example playbook:
       roles:
       - resmo.sshd
 
-## Homepage:
 
-https://github.com/resmo/ansible-role-sshd
+License
+-------
+
+BSD
+
+
+Author Information
+------------------
+
+- René Moser
