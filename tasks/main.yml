@@ -1,4 +1,8 @@
 ---
+- name: add the OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags: ['package', 'configuration', 'service']
+
 - name: install sshd for Debian
   apt: pkg={{ sshd_pkg_name }} state={{ sshd_pkg_state }}
   when: ansible_os_family == 'Debian'
