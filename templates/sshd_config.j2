@@ -1,13 +1,16 @@
+# {{ ansible_managed }}
 Port {{ sshd_port }}
-# Use these options to restrict which interfaces/protocols sshd will bind to
-#ListenAddress ::
-#ListenAddress 0.0.0.0
+
+{% for sshd_listen_address in sshd_listen_addresses %}
+ListenAddress {{ sshd_listen_address }}
+{% endfor %}
+
 Protocol 2
 
 # HostKeys for protocol version 2
-HostKey /etc/ssh/ssh_host_rsa_key
-HostKey /etc/ssh/ssh_host_dsa_key
-HostKey /etc/ssh/ssh_host_ecdsa_key
+{% for sshd_host_key in sshd_host_keys %}
+HostKey {{ sshd_host_key }}
+{% endfor %}
 
 #Privilege Separation is turned on for security
 UsePrivilegeSeparation yes
