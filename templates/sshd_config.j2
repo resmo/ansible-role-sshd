@@ -71,7 +71,9 @@ TCPKeepAlive yes
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
 
-Subsystem sftp /usr/lib/openssh/sftp-server
+{% for sshd_subsystem in sshd_subsystems %}
+Subsystem {{ sshd_subsystem.name }} {{ sshd_subsystem.path }}
+{% endfor %}
 
 # Set this to 'yes' to enable PAM authentication, account processing,
 # and session processing. If this is enabled, PAM authentication will
