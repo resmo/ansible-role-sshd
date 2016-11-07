@@ -89,3 +89,7 @@ Subsystem {{ sshd_subsystem.name }} {{ sshd_subsystem.path }}
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
+{% if sshd_custom_config is defined and sshd_custom_config != '' %}
+# Custom sshd options
+{{ sshd_custom_config }}
+{% endif %}
